@@ -1,3 +1,6 @@
 [endpoints]
 node1.example.com
 node2.example.com
+
+[endpoints:vars]
+ansible_user = ansible
