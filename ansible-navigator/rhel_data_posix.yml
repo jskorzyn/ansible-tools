@@ -1,0 +1,26 @@
+---
+- name: Data gathering from RHEL system
+  hosts: endpoints
+  gather_facts: true
+
+  tasks:
+    - name: Package info Data
+      ansible.builtin.package_facts:
+      register: package_list
+
+    - name: Show facts from setup modul
+      ansible.builtin.debug:
+        var: ansible_facts
+
+    - name: Show facts istalled packages
+      ansible.builtin.debug:
+        var: package_list
+
+    - name: Gather firewalld info
+      ansible.posix.firewalld_info:
+        active_zones: true
+      register: firewalld_info
+
+    - name: Show facts about firewalld
+      ansible.builtin.debug:
+        var: firewalld_info

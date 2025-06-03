@@ -1,0 +1,17 @@
+---
+- name: Data gathering from RHEL system
+  hosts: endpoints
+  gather_facts: true
+
+  tasks:
+    - name: Package info Data
+      ansible.builtin.package_facts:
+      register: package_list
+
+    - name: Show facts from setup modul
+      ansible.builtin.debug:
+        var: ansible_facts
+
+    - name: Show facts istalled packages
+      ansible.builtin.debug:
+        var: package_list.zlib

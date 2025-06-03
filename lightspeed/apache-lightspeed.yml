@@ -1,0 +1,44 @@
+---
+- name: Apache server config playbook
+  hosts: all
+
+  tasks:
+  - name: Install apache server on RHEL server
+
+
+  - name: Set selinux context for httpd content root directory
+
+  - name: Add firewalld rules to allow http and https
+
+  - name: Add content from /tmp/source do root directory of apache server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+
