@@ -19,8 +19,9 @@
     - name: Gather firewalld info
       ansible.posix.firewalld_info:
         active_zones: true
-      register: firewalld_info
+      register: my_firewall_info
+      become: true
 
     - name: Show facts about firewalld
       ansible.builtin.debug:
-        var: firewalld_info
+        var: my_firewall_info
